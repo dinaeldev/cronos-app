@@ -18,7 +18,7 @@ const whileList = [process.env.FRONTEND_URL];
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if (whileList.includes(origin)) {
+        if (!whileList.includes(origin)) {
             //Puede consultar la api
             callback(null, true);
         } else {
